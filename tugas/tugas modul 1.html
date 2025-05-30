@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulir Pendaftaran Mahasiswa Baru</title>
+    <!-- judul halaman yang akan tampil di tab browser -->
+</head>
+<body>
+
+    <!-- buat nampilin logo kampus (identitas visual di bagian atas halaman) -->
+    <img src="gambar tugas modul 1.png" alt="Logo Kampus" width="150">
+
+    <!-- heading utama halaman sebagai penjelasan isi formulir -->
+    <h1>Formulir Pendaftaran Mahasiswa Baru STITEK Bontang</h1>
+
+    <!-- form utama dengan metode POST untuk mengirim data -->
+    <form action="#" method="post">
+
+        <!-- bagian data pribadi calon mahasiswa, dikelompokkan dengan fieldset -->
+        <fieldset>
+            <legend>Data Pribadi Calon Mahasiswa</legend>
+
+            <!-- input teks untuk nama lengkap dengan placeholder sebagai contoh pengisian, wajib diisi -->
+            <label for="nama">Nama Lengkap:</label><br>
+            <input type="text" id="nama" name="nama" placeholder="Contoh: Nazhifah N. A." required><br><br>
+
+            <!-- input email dengan tipe khusus agar validasi email berjalan otomatis -->
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" placeholder="Contoh: email@domain.com" required><br><br>
+
+            <!-- pilihan jenis kelamin menggunakan radio button, wajib memilih salah satu -->
+            <label>Jenis Kelamin:</label><br>
+            <input type="radio" id="pria" name="jenis_kelamin" value="Pria" required>
+            <label for="pria">Pria</label><br>
+            <input type="radio" id="wanita" name="jenis_kelamin" value="Wanita" required>
+            <label for="wanita">Wanita</label><br><br>
+        </fieldset>
+
+        <!-- bagian pilihan hobi menggunakan checkbox, bisa memilih lebih dari satu -->
+        <fieldset>
+            <legend>Hobi</legend>
+            <input type="checkbox" id="olahraga" name="hobi[]" value="Olahraga">
+            <label for="olahraga">Olahraga</label><br>
+            <input type="checkbox" id="membaca" name="hobi[]" value="Membaca">
+            <label for="membaca">Membaca</label><br>
+            <input type="checkbox" id="ngoding" name="hobi[]" value="Ngoding">
+            <label for="ngoding">Ngoding</label><br>
+        </fieldset>
+
+        <!-- dropdown pilihan jurusan dengan opsi default yang meminta user memilih -->
+        <fieldset>
+            <legend>Pilihan Jurusan</legend>
+            <label for="jurusan">Pilih Jurusan:</label><br>
+            <select id="jurusan" name="jurusan" required>
+                <option value="">--Pilih Jurusan--</option>
+                <option value="Teknik Informatika">Teknik Informatika</option>
+                <option value="Sistem Informasi">Sistem Informasi</option>
+                <option value="Teknik Elektro">Teknik Elektro</option>
+                <option value="Bisnis Digital">Bisnis Digital</option>
+            </select><br><br>
+        </fieldset>
+
+        <!-- kolom alamat yang bersifat opsional, menggunakan textarea untuk input panjang -->
+        <fieldset>
+            <legend>Alamat</legend>
+            <label for="alamat">Alamat Lengkap:</label><br>
+            <textarea id="alamat" name="alamat" rows="4" cols="40" placeholder="Contoh: Jl. Pendidikan No. 123, Bontang"></textarea><br><br>
+        </fieldset>
+
+        <!-- tombol submit untuk mengirim data formulir -->
+        <button type="submit">Kirim</button>
+
+    </form>
+
+    <!-- link ke website kampus jika masih mau mencari tahu info -->
+    <p>Silakan Kunjungi <a href="https://www.stitek.ac.id" target="_blank">Website Kampus</a> untuk informasi lebih lanjut.</p>
+
+</body>
+</html>
