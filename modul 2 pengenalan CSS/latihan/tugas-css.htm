@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Praktikum CSS</title> 
+  <style>
+    /* atur box sizing biar layout gak rusak */
+    * {
+      box-sizing: border-box;
+    }
+    /* instruksi tugas 1. tampilan umum ni buat body */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #add8e6; /* biru olig*/
+    }
+    /* instruksi tugas: (di tgas bagian 1-c) bwat headingnyA trus yg p bagian 1-d */
+    h1 {
+      text-align: center;
+      font-size: 40px;
+      color: white;
+      margin-top: 30px;
+    }
+    
+    p {
+      background-color: #d3d3d3; /* intruksi tugas bagian 1-d */
+      color: black;
+      padding: 20px;
+      max-width: 800px;
+      margin: 10px auto;
+      border-radius: 10px;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr); /* 3 kolom */
+      gap: 20px;
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 10px;
+    }
+
+    .box1, .box2, .box3 {
+      border: 2px solid black;
+      padding: 10px;
+      height: 150px;
+      border-radius: 10px;
+    }
+
+    .box1 {
+      background-color: #ff9999; /* merah muda */
+    }
+
+    .box2 {
+      background-color: #99ff99; /* hijau muda */
+    }
+
+    .box3 {
+      background-color: #9999ff; /* biru muda */
+    }
+
+    /* Responsive untuk tablet (≤768px) */
+    @media only screen and (max-width: 768px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Responsive untuk smartphone (≤480px) */
+    @media only screen and (max-width: 480px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      .box1, .box2, .box3 {
+        height: 120px;
+      }
+
+      p {
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Praktikum CSS</h1>
+
+  <p>Halo! ^_^ ini tugas modul 2. pengenalan CSS (cascading style sheet) semangat!</p>
+
+  <div class="container">
+    <div class="box1">box 1</div>
+    <div class="box2">box 2</div>
+    <div class="box3">box 3</div>
+  </div>
+
+</body>
+</html>

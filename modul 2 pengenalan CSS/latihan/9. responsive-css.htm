@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="id"> 
+<head> 
+  <meta charset="UTF-8">
+  <title>Responsive Grid</title>
+  <style> 
+    body {
+      background-color: rgb(175, 235, 255); /* Latar desktop (biru) */
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .grid-container { 
+      display: grid; 
+      grid-template-columns: repeat(3, 1fr); 
+      gap: 10px; 
+      padding: 10px; 
+    } 
+
+    .grid-item { 
+      background-color: #bc39a6; /* unguu */ 
+      color: white; 
+      padding: 20px; 
+      font-size: 24px; 
+      text-align: center; 
+      border-radius: 8px;
+    } 
+
+    /* Responsive untuk layar kecil */
+    @media only screen and (max-width: 600px) { 
+      body {
+        background-color: rgb(255, 206, 235); /* pinky untuk smartphone */
+      }
+
+      .grid-container { 
+        grid-template-columns: 1fr; /* 1 kolom */
+      }
+
+      .grid-item {
+        font-size: 18px; /* Ukuran font diperkecil */
+        padding: 15px;
+      }
+    } 
+  </style> 
+</head> 
+<body> 
+  <div class="grid-container"> 
+    <div class="grid-item">masuk</div> 
+    <div class="grid-item">daftar</div> 
+    <div class="grid-item">keluar</div> 
+  </div> 
+</body> 
+</html>
