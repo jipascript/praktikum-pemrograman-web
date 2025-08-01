@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Jam Digital</title>
+  <style>
+    #jam {
+      font-size: 2em;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body onload="jalankanJam()">
+  <h2>Jam Digital Real-Time</h2>
+  <div id="jam"></div>
+
+  <script>
+    function updateJam() {
+      const sekarang = new Date();
+      let jam = sekarang.getHours();
+      let menit = sekarang.getMinutes();
+      let detik = sekarang.getSeconds();
+
+      jam = (jam < 10 ? "0" : "") + jam;
+      menit = (menit < 10 ? "0" : "") + menit;
+      detik = (detik < 10 ? "0" : "") + detik;
+
+      const waktuString = jam + ":" + menit + ":" + detik;
+      document.getElementById("jam").innerText = waktuString;
+    }
+
+    function jalankanJam() {
+      setInterval(updateJam, 1000);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Slideshow</title>
+</head>
+<body>
+  <h2>Galeri Gambar</h2>
+  <img id="gambar-slideshow" src="" alt="Slideshow" width="500"><br>
+  <button type="button" onclick="gantiGambar(-1)">Previous</button>
+  <button type="button" onclick="gantiGambar(1)">Next</button>
+
+  <script>
+    const daftarGambar = [
+      "https://picsum.photos/id/1015/800/500",
+      "https://picsum.photos/id/1025/800/500",
+      "https://picsum.photos/id/1035/800/500",
+      "https://picsum.photos/id/1041/800/500",
+      "https://picsum.photos/id/1062/800/500"
+    ];
+
+    let indeksGambar = 0;
+    const elemenGambar = document.getElementById("gambar-slideshow");
+
+    function tampilkanGambar() {
+      elemenGambar.src = daftarGambar[indeksGambar];
+    }
+
+    function gantiGambar(arah) {
+      indeksGambar += arah;
+      if (indeksGambar >= daftarGambar.length) {
+        indeksGambar = 0;
+      }
+      if (indeksGambar < 0) {
+        indeksGambar = daftarGambar.length - 1;
+      }
+      tampilkanGambar();
+    }
+
+    tampilkanGambar();
+  </script>
+</body>
+</html>

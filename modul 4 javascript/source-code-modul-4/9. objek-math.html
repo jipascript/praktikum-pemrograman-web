@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Objek Math</title>
+</head>
+<body>
+  <h2>Generator Angka Acak</h2>
+  <p>Klik tombol untuk mendapatkan angka acak antara 1 dan 100.</p>
+  <button type="button" onclick="hasilkanAngka()">Hasilkan Angka</button>
+  <h3>Angka Anda: <span id="angka-acak">?</span></h3>
+
+  <script>
+    function hasilkanAngka() {
+      const angka = Math.floor(Math.random() * 100) + 1;
+      document.getElementById("angka-acak").innerText = angka;
+    }
+  </script>
+</body>
+</html>

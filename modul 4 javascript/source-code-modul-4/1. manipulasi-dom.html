@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Manipulasi DOM</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+    #judul {
+      color: steelblue;
+    }
+    button {
+      padding: 10px 15px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="judul">Selamat Datang di Praktikum JavaScript</h1>
+  <button type="button" id="btnUbahTeks" onclick="ubahTeks()">Ubah Teks Judul</button>
+
+  <script>
+    function ubahTeks() {
+      const judulElement = document.getElementById("judul");
+      if (judulElement) {
+        judulElement.innerHTML = "Teks Berhasil Diubah!";
+        judulElement.style.color = "crimson";
+        judulElement.style.fontSize = "36px";
+      } else {
+        console.warn("Elemen dengan ID 'judul' tidak ditemukan.");
+      }
+    }
+  </script>
+</body>
+</html>

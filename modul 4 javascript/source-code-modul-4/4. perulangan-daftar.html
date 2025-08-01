@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Perulangan</title>
+</head>
+<body>
+  <h2>Daftar Nama Teman Zhifah di TI Pagi</h2>
+  <ul id="daftar-teman"></ul>
+
+  <script>
+    const teman = ["Putri Nabila", "Nazwa Adinda", "Nur Hikma", "Lutfi Mulia", "Marcahaya Manalu"];
+    const daftarElement = document.getElementById("daftar-teman");
+
+    for (let i = 0; i < teman.length; i++) {
+      daftarElement.innerHTML += "<li>" + teman[i] + "</li>";
+    }
+  </script>
+</body>
+</html>

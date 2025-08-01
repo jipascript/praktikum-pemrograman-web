@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Logika Percabangan</title>
+</head>
+<body>
+  <h2>Kalkulator Diskon Belanja</h2>
+  <p>Masukkan total belanja Anda:</p>
+  <input type="number" id="totalBelanja" placeholder="Contoh: 150000">
+  <button type="button" onclick="cekDiskon()">Cek Diskon</button>
+
+  <h3 id="hasil">Hasil Diskon</h3>
+
+  <script>
+    function cekDiskon() {
+      var total = parseFloat(document.getElementById("totalBelanja").value);
+      var pesan = "";
+
+      if (isNaN(total)) {
+        pesan = "Mohon masukkan angka yang valid.";
+      } else if (total > 250000) {
+        var diskon = total * 0.15;
+        var totalBayar = total - diskon;
+        pesan = "Selamat! Anda dapat diskon 15% sebesar Rp " + diskon.toFixed(0) +
+                ". Total bayar: <b>Rp " + totalBayar.toFixed(0) + "</b>";
+      } else if (total >= 100000) {
+        var diskon = total * 0.10;
+        var totalBayar = total - diskon;
+        pesan = "Selamat! Anda dapat diskon 10% sebesar Rp " + diskon.toFixed(0) +
+                ". Total bayar: <b>Rp " + totalBayar.toFixed(0) + "</b>";
+      } else {
+        pesan = "Maaf, tidak ada diskon. Total bayar: <b>Rp " + total.toFixed(0) + "</b>";
+      }
+
+      document.getElementById("hasil").innerHTML = pesan;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Objek String</title>
+</head>
+<body>
+  <h2>Analisis Nama</h2>
+
+  <input type="text" id="inputNama" placeholder="Masukkan nama Anda">
+  <button type="button" onclick="analisisNama()">Analisis</button>
+
+  <p id="hasilAnalisis"></p>
+
+  <script>
+    function analisisNama() {
+      const nama = document.getElementById("inputNama").value;
+      let hasil = "";
+
+      hasil += "Nama dalam huruf kapital: <b>" + nama.toUpperCase() + "</b><br>";
+      hasil += "Jumlah karakter: <b>" + nama.length + "</b> karakter<br>";
+      hasil += "3 karakter pertama: <b>" + nama.substring(0, 3) + "</b>";
+
+      document.getElementById("hasilAnalisis").innerHTML = hasil;
+    }
+  </script>
+</body>
+</html>

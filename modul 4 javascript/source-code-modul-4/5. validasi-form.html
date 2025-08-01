@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Validasi Form</title>
+  <style>
+    .error { color: red; font-size: 0.9em; }
+  </style>
+</head>
+<body>
+  <h2>Form Registrasi</h2>
+  <form onsubmit="return validasi()">
+    <label for="nama">Nama Lengkap:</label><br>
+    <input type="text" id="nama" name="nama"><br>
+    <small id="nama-error" class="error"></small><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email"><br>
+    <small id="email-error" class="error"></small><br><br>
+
+    <input type="submit" value="Daftar">
+  </form>
+
+  <script>
+    function validasi() {
+      var nama = document.getElementById("nama").value;
+      var email = document.getElementById("email").value;
+      var namaError = document.getElementById("nama-error");
+      var emailError = document.getElementById("email-error");
+      var valid = true;
+
+      if (nama === "") {
+        namaError.innerHTML = "Nama tidak boleh kosong!";
+        valid = false;
+      } else {
+        namaError.innerHTML = "";
+      }
+
+      if (email === "") {
+        emailError.innerHTML = "Email tidak boleh kosong!";
+        valid = false;
+      } else {
+        emailError.innerHTML = "";
+      }
+
+      if (valid) alert("Registrasi berhasil!");
+      return valid;
+    }
+  </script>
+</body>
+</html>

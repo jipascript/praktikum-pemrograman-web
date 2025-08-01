@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Latihan Event Handling</title>
+  <style>
+    #inputNama {
+      border: 2px solid #ccc;
+      padding: 8px;
+      transition: border-color 0.3s;
+    }
+    #inputNama:focus {
+      border-color: dodgerblue;
+    }
+  </style>
+</head>
+<body>
+  <h3>Event onmouseover &amp; onmouseout</h3>
+  <img id="gambar"
+       src="https://placehold.co/200x150/e8e8e8/000?text=Gambar+Awal"
+       alt="Gambar"
+       onmouseover="gantiGambar()"
+       onmouseout="kembalikanGambar()">
+
+  <hr>
+
+  <h3>Event onfocus &amp; onchange</h3>
+  <label for="inputNama">Ketik Nama Anda:</label>
+  <input type="text" id="inputNama" onchange="tampilkanOutput()">
+  <p>Output: <span id="hasil"></span></p>
+
+  <script>
+    function gantiGambar() {
+      document.getElementById("gambar").src = "https://placehold.co/200x150/3498db/fff?text=Gambar+Kedua";
+    }
+
+    function kembalikanGambar() {
+      document.getElementById("gambar").src = "https://placehold.co/200x150/e8e8e8/000?text=Gambar+Awal";
+    }
+
+    function tampilkanOutput() {
+      const nilaiInput = document.getElementById("inputNama").value;
+      document.getElementById("hasil").innerHTML = "<b>" + nilaiInput + "</b>";
+    }
+  </script>
+</body>
+</html>
